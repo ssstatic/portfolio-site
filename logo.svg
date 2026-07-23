@@ -4,25 +4,12 @@
       <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="7" result="n"/>
       <feDisplacementMap in="SourceGraphic" in2="n" scale="3.2" xChannelSelector="R" yChannelSelector="G"/>
     </filter>
-    <filter id="sb" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="0.9"/>
-    </filter>
-    <linearGradient id="pg" x1="0.2" y1="0" x2="0.8" y2="1">
-      <stop offset="0" stop-color="#fbdcea"/>
-      <stop offset="0.5" stop-color="#f4bdd6"/>
-      <stop offset="1" stop-color="#e5a4c4"/>
-    </linearGradient>
     <mask id="cut">
       <rect x="8" y="8" width="84" height="84" rx="18" fill="#ffffff"/>
-      <path d="M50 29 L63 50 L50 71 L37 50 Z" fill="#000000"/>
+      <path d="M50 23 L69 50 L50 77 L31 50 Z" fill="#000000"/>
     </mask>
   </defs>
   <g filter="url(#wobble)">
-    <rect x="8" y="8" width="84" height="84" rx="18" fill="url(#pg)" mask="url(#cut)"/>
-    <!-- embossed cutout: lit upper edges, shadowed lower edges -->
-    <path d="M63 50 L50 29 L37 50" fill="none" stroke="#ffffff" stroke-opacity="0.7"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#sb)"/>
-    <path d="M37 50 L50 71 L63 50" fill="none" stroke="#8f3f66" stroke-opacity="0.62"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#sb)"/>
+    <rect x="8" y="8" width="84" height="84" rx="18" fill="#f4bdd6" mask="url(#cut)"/>
   </g>
 </svg>
