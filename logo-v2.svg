@@ -1,0 +1,18 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sabrina Jade — SJ monogram">
+  <defs>
+    <filter id="wobble2" x="-25%" y="-25%" width="150%" height="150%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.038" numOctaves="2" seed="4" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.2"
+        xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <g filter="url(#wobble2)">
+    <rect x="7" y="7" width="86" height="86" rx="18" fill="#f4bdd6"/>
+    <g fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+      <!-- S -->
+      <path d="M60 33 C46 27 32 34 35 45 C38 55 57 53 59 64 C61 75 43 79 32 71"/>
+      <!-- J, overlapping the S -->
+      <path d="M71 30 L71 63 C71 76 55 78 46 67"/>
+    </g>
+  </g>
+</svg>
