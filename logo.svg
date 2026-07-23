@@ -6,7 +6,7 @@
     </filter>
     <mask id="cut">
       <rect x="8" y="8" width="84" height="84" rx="18" fill="#ffffff"/>
-      <path d="M50 23 L69 50 L50 77 L31 50 Z" fill="#000000"/>
+      <path d="M50 29 L63 50 L50 71 L37 50 Z" fill="#000000"/>
     </mask>
   </defs>
   <g filter="url(#wobble)">
