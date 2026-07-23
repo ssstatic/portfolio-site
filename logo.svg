@@ -1,0 +1,16 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sabrina Jade logo">
+  <defs>
+    <!-- hand-drawn wobble: displace edges with fractal noise -->
+    <filter id="wobble" x="-25%" y="-25%" width="150%" height="150%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="7" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.4"
+        xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <g filter="url(#wobble)">
+    <!-- solid pink rounded square, no border -->
+    <rect x="7" y="7" width="86" height="86" rx="18" fill="#f4bdd6"/>
+    <!-- white diamond cutout, elongated (a little longer than wide) -->
+    <path d="M50 27 L64 50 L50 73 L36 50 Z" fill="#ffffff"/>
+  </g>
+</svg>
