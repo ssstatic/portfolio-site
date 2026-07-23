@@ -1,16 +1,35 @@
 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sabrina Jade logo">
   <defs>
-    <!-- hand-drawn wobble: displace edges with fractal noise -->
-    <filter id="wobble" x="-25%" y="-25%" width="150%" height="150%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="7" result="noise"/>
-      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.4"
-        xChannelSelector="R" yChannelSelector="G"/>
+    <filter id="wobble" x="-35%" y="-35%" width="170%" height="170%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3.2" xChannelSelector="R" yChannelSelector="G"/>
     </filter>
+    <filter id="lift" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#9c4970" flood-opacity="0.55"/>
+    </filter>
+    <filter id="innersh" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.4"/>
+    </filter>
+    <linearGradient id="pg" x1="0.25" y1="0" x2="0.75" y2="1">
+      <stop offset="0" stop-color="#fcdeeb"/>
+      <stop offset="0.5" stop-color="#f4bdd6"/>
+      <stop offset="1" stop-color="#e09dbf"/>
+    </linearGradient>
+    <mask id="cut">
+      <rect x="8" y="8" width="84" height="84" rx="18" fill="#ffffff"/>
+      <path d="M50 29 L63 50 L50 71 L37 50 Z" fill="#000000"/>
+    </mask>
   </defs>
   <g filter="url(#wobble)">
-    <!-- solid pink rounded square, no border -->
-    <rect x="7" y="7" width="86" height="86" rx="18" fill="#f4bdd6"/>
-    <!-- white diamond cutout, elongated (a little longer than wide) -->
-    <path d="M50 27 L64 50 L50 73 L36 50 Z" fill="#ffffff"/>
+    <!-- solid pink body with a real transparent diamond hole, lifted by a drop shadow -->
+    <g filter="url(#lift)">
+      <rect x="8" y="8" width="84" height="84" rx="18" fill="url(#pg)" mask="url(#cut)"/>
+    </g>
+    <!-- recessed inner shadow around the cutout edge for 3D depth -->
+    <path d="M50 29 L63 50 L50 71 L37 50 Z" fill="none" stroke="#8f3f66"
+      stroke-opacity="0.55" stroke-width="2.4" filter="url(#innersh)"/>
+    <!-- top-left highlight sheen -->
+    <path d="M50 29 L37 50" fill="none" stroke="#ffffff" stroke-opacity="0.5"
+      stroke-width="1.6" stroke-linecap="round" filter="url(#innersh)"/>
   </g>
 </svg>
